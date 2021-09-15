@@ -138,5 +138,5 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 # Login/Logout
-LOGIN_REDIRECT_URL = 'test'
-LOGOUT_REDIRECT_URL = 'thanks'
+LOGIN_REDIRECT_URL = 'accounts:test'
+LOGOUT_REDIRECT_URL = 'accounts:thanks'
