@@ -1,7 +1,7 @@
 from django.db import models
 from django.template.base import kwarg_re
 from django.urls.base import reverse_lazy
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.conf import settings
 
 import misaka
