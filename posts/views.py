@@ -7,7 +7,6 @@ from django.views import generic
 # pip install django-braces
 from braces.views import SelectRelatedMixin
 
-from . import forms
 from . import models
 
 from django.contrib.auth import get_user_model
@@ -55,10 +54,10 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     fields = ('message','group')
     model = models.Post
 
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs.update({"user": self.request.user})
-    #     return kwargs
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({"user": self.request.user})
+        return kwargs
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
