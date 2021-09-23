@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'debug_toolbar',
     'bootstrap4',
     'accounts',
     'posts',
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'socialmedia.urls'
@@ -134,11 +137,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,]
 
+INTERNAL_IPS = ['127.0.0.1']
 
 # Media Setup
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 # Login/Logout
-LOGIN_REDIRECT_URL = 'accounts:test'
-LOGOUT_REDIRECT_URL = 'accounts:thanks'
+LOGIN_REDIRECT_URL = 'account:test'
+LOGOUT_REDIRECT_URL = 'account:thanks'

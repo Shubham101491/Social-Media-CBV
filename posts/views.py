@@ -54,10 +54,10 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     fields = ('message','group')
     model = models.Post
 
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.update({"user": self.request.user})
-        return kwargs
+    # def get_form_kwargs(self):
+    #     kwargs = super().get_form_kwargs()
+    #     kwargs.update({"user": self.request.user})
+    #     return kwargs
 
     def form_valid(self, form):
         self.object = form.save(commit=False)

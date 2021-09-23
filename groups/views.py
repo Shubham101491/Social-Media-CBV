@@ -19,8 +19,6 @@ class SingleGroup(generic.DetailView):
 
 class ListGroups(generic.ListView):
     model = Group
-    template_name = 'groups/group_base.html'
-
 
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
 

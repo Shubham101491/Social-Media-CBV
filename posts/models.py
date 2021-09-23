@@ -26,7 +26,7 @@ class Post(models.Model):
         super().save(*args,**kwargs)
 
     def get_absolute_url(self):
-        return reverse('post:single',
+        return reverse('posts:single',
         kwargs={'username':self.user.username,'pk':self.pk})
 
     class Meta:
